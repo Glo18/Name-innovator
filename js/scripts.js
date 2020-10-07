@@ -5,22 +5,25 @@ var maleNames = ["Kwasi", "Kwadwo", "Kwabena", "Kwaku", "Yaw", "Kofi", "Kwame"];
 var femaleNames = ["Akosua", "Adwoa", "Abenaa", "Akua", " Yaa", "Afua", "Ama"];
 
 function validate() {
+    var year = document.getElementById("year").value;
+    var month = document.getElementById("month").value;
+    var monthdate = document.getElementById("monthdate").value;
     var genders = document.getElementsByName("gender");
-    if (document.myForm.year.value == "" || document.myForm.year.value.length != 4 || document.myForm.year.value > 2100 || document.myForm.year.value <= 1900) {
+    if (year == "" || year.length != 4 || year> 2100 || year <= 1900) {
         alert("Please provide a valid year of birth! eg 2019");
-        document.myForm.year.focus();
+        // document.myForm.year.focus();
         return false;
     }
-    else if (document.myForm.month.value == "" || isNaN(document.myForm.month.value) ||
-        document.myForm.month.value.length != 2 || document.myForm.month.value > 12 || document.myForm.month.value <= 0) {
+    else if (month == "" || isNaN(month) ||
+        month.length != 2 || month > 12 || month <= 0) {
         alert("Please provide your month of birth! between 1 and 12");
-        document.myForm.month.focus();
+        // document.myForm.month.focus();
         return false;
     }
-    else if (document.myForm.date.value == "" || isNaN(document.myForm.month.value) ||
-        document.myForm.month.value.length != 2 || document.myForm.date.value > 31 || document.myForm.date.value <= 0) {
+    else if (monthdate == "" || isNaN(monthdate) ||
+        monthdate.length != 2 || monthdate > 31 || monthdate <= 0) {
         alert("Please provide a valid date that you were born in!");
-        document.myForm.day.focus();
+        // document.myForm.day.focus();
         return false;
     }
     else if (genders[0].checked == false && genders[1].checked == false) {
@@ -38,7 +41,7 @@ function calculateDayValue() {
     CC = parseInt(year.substring(0, 2));
     YY = parseInt(year.substring(2, 4));
     MM = parseInt(document.getElementById("month").value);
-    DD = parseInt(document.getElementById("date").value);
+    DD = parseInt(document.getElementById("monthdate").value);
     d = (((CC / 4) - 2 * CC - 1) + ((5 * YY / 4)) + ((26 * (MM + 1) / 10)) + DD) % 7;
     console.log(d);
     return (Math.floor(d));
@@ -106,6 +109,9 @@ function getGender() {
     }
 }
 function findName() {
+    validate();
     dayValue = calculateDayValue();
     getGender();
+    // alert('happy')
+    // console.log('happy')
 } 
