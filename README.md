@@ -1,5 +1,5 @@
 # {Name-innovator}
-###{This is a site that gives information about akan names.To be able to access use the following link:https://glo18.github.io/Name-innovator/},
+###{This is a site that gives information about Akan names.To be able to access use the following link:https://glo18.github.io/Name-innovator/},
 {05/10/2020}
 ### By {Glory Kiogora}
 
