@@ -112,6 +112,4 @@ function findName() {
     validate();
     dayValue = calculateDayValue();
     getGender();
-    // alert('happy')
-    // console.log('happy')
 } 
